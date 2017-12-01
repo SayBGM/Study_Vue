@@ -1,5 +1,10 @@
-<link rel="stylesheet" href="//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css">
-<div class="nanum-square bold">
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+div, #cas{
+    font-family: 'Nanum Gothic';
+}
+</style>
+<div id="cas" style="font-family: 'Nanum Gothic';">
 
 Study Vue.js
 ====================
