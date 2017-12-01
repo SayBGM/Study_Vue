@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css">
+<div class="nanum-square bold">
+
 Study Vue.js
 ====================
 
@@ -36,4 +39,5 @@ template
 템플릿을 사용해서 바로 코딩 할 수 있도록 하기
 
 
-####최종 마감일 1월 31일
+### 최종 마감일 1월 31일
+</div>
