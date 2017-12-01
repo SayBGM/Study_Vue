@@ -1,6 +1,4 @@
-
-</style>
-<div id="cas" style="@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+<div style="@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 font-family:'Nanum Gothic';">
 
 Study Vue.js
