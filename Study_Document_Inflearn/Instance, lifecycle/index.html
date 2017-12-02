@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>인스턴스 라이프사이클</title>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+    <script src="https://unpkg.com/vue@2.3.3"></script>
+    <script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: "hello Vue.js!"
+        },
+        beforeCreate: 
+        function(){
+            console.log("beforeCreate");
+        },
+        created: function(){
+            console.log("created");
+        },
+        mounted: function(){
+            console.log("mounted");
+            setTimeout(() => {
+                this.message = "안녕 Vue.js!"
+            }, 3000);
+        },
+        updated: function(){
+            console.log("updated")
+        }
+    })
+    </script>
+</body>
+</html>
