@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>컴포넌트 등록</title>
+</head>
+<body>
+    <div id="app">
+        <button>hello<my-component></my-component></button>
+        <my-component></my-component>
+        <my-local-component></my-local-component>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.3.3"></script>
+    <script>
+        Vue.component('my-component', {
+            template: '<div>A custom component</div>'
+        });
+        
+        // local
+        var cmp = {
+        template: "<div>A local Component!</div>"
+        };
+
+        new Vue({
+            el: '#app',
+            components:{
+                'my-local-component':cmp
+            }
+        })
+    </script>
+</body>
+</html>
