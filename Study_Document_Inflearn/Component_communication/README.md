@@ -40,3 +40,44 @@ var app = new Vue({
 ---
 연결된 후속 단어 앞에 - 를 붙여준다.'
 * ex) back-color
+
+같은 레벨의 컴포넌트 간 통신
+------
+동일한 상위 컴포넌트를 가진 2개의 하위 컴포넌트 간의 통신은 
+ * Child -> Parent -> 다시 2개의 Children
+
+컴포넌트 간의 직접적인 통신은 불가능하도록 되어 있는게 Vue의 기본 구조
+
+### Event Bus - 컴포넌트 간 통신
+Non Parent - Child 컴포넌트 간의 통신을 위해 Event Bus 를 활용할 수 있다.
+
+* Event Bus를 위해 새로운 Vue를 생성하여 아래와 같이 Vue Root Instance 가 위치한 파일에 등록
+
+```
+//Vue Root Instance 전에 꼭 등록 순서가 중요
+export const eventBus = new Vue();
+new Vue({
+    ~~~
+})
+```
+
+## 이벤트 발생
+* 이벤트를 발생시킬 컴포넌트에 *eventBus* import후 *$emit*으로 이벤트 발생
+
+```
+import { eventBus } from '../../main';
+
+eventBus.%emit('refresh' 10);
+```
+
+## 이벤트 수신
+* 해당 이벤트를 받을 컴포넌트에도 동일하게 import 후 콜백으로 이벤트 수신
+```
+import { eventBus } from '../../main';
+
+created() {
+    eventBus.$on('refresh', function(data){
+        console.log(data); //10
+    });
+}
+```
