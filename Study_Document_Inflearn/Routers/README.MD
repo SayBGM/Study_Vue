@@ -56,6 +56,33 @@ var Foo = {
 }
 ```
 
+Named Views
+========
+* 라우터로 특정 URL로 이동시, 해당 URL에 해당하는 여러개의 View(컴포넌트)를 동시에 렌더링한다.
+* 각 컴포넌트에 해당하는  **name**속성과 **router-view**지정이 필요
+```
+<div id="app">
+    <router-view name="nestedHeader"></router-view>
+    <router-view></router-view>
+</div>
+```
+```
+{
+    path: '/home',
+    components: {
+        netedHeader: AppHeader,         //name이 nestHeader가 있는 곳에 AppHeader를 뿌려줌
+        default: Body                   //설정되지 않는 것(default)에 Body를 뿌려줌
+    }
+},
+```
+Nested View vs Named Views
+=========================
+* 특정 URL에서 1개의 컴포넌트에 여러 개의 하위 컴포넌트를 갖는 것을 **Nested Routes**
+* 특정 URL에서 여러 개의 컴포넌트를 쪼개진 뷰 단위로 렌더링 하는 것을 **Named View**
+
+<img src="https://joshua1988.github.io/images/posts/web/vuejs/namedview-nestedroutes.png">
+
+
 추가로 배운 것
 ----
 ```
