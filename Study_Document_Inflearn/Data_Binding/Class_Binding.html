@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Binding Example</title>
+    <style>
+        body{
+            margin: 0 0 0 0;
+        }
+        .class-a{
+            position: absolute;
+            left: 25vw;
+            top: 35vh;
+            width: 50vw;
+            height: 30vh;
+        }
+        .class-b{
+            font-size: 10vh;
+            background-color: rgb(0,120, 240);
+            color: white;
+        }
+    </style>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app">
+            <div v-bind:class="[classA, classB]">Hello World!</div>
+    </div>
+<script>
+    
+</script>
+    <script>
+        var app = new Vue({
+            el:'#app',   
+            data:{
+                classA: 'class-a',
+                classB: 'class-b'
+            }
+        })
+    </script>
+</body>
+</html>

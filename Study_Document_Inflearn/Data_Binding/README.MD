@@ -45,3 +45,40 @@ Directives
 <!-- click = {{doSomething}} 과 같은 역할>
 <a v-on:click="doSomething"></a>
 ```
+
+Class Binding
+----
+* CSS 스타일링을 위해서 class를 아래 2가지 방법으로 추가가 가능하다.
+    * **v-bind:class**
+    * _class="{{ className }}"_
+        * _Vue 2.4버전부터 제거된 문법입니다._<br>
+    _2.3 버전 이하에서는 라이브러리 이용자들이 다양한 방법으로 class 바인딩을 하도록 허용하였지만, 일관적인 코드 작성 규칙과 혼용했을 때의 에러를 방지하기 위해 더이상 HTML 의 attributes 안에 “{{ }}” 를 이용한 바인딩을 허용하지 않습니다._
+* 주의할 점은 위의 두 방법을 함꼐 사용하지 않고 한 가지만 적용해야 **에러**를 미연에 **방지**할 수 있다.
+    * 이렇게 하면 **테스팅**이나 **[트러블 슈팅](https://goo.gl/uW5Crc)** 할 때 유용하다.
+
+
+* 아래와 같이 **class**속성과 **v-bind:class**속성을 동시에 사용해도 된다.
+```
+<div class="static" v-bind:class="{ 'class-a': isA, 'class-b': isB}"></div>
+<script>
+    data:{
+        isA: true,
+        isB: false
+    }
+</script>
+```
+* 위 결과 값은
+```
+<div class="static class-a"></div>
+```
+
+* 아래와 같이 Array구문도 사용할 수 있다.
+```
+<div v-bind:class="[classA, classB]"></div>
+<script>
+    data:{
+        classA: 'class-a',
+        classB: 'class-b'
+    }
+</script>
+```
