@@ -1,6 +1,6 @@
 Vue Routers
 =====
-* Vue를 이용한 SPA(싱글 페이지 애플리케이션)를 제작할 때 유용한 라우팅 라이브러리 
+* Vue를 이용한 SPA(싱글 페이지 애플리케이션)를 제작할 때 유용한 라우팅 라이브러리
 * Vue 코어 라이브러리 외에 Router 라이브러리를 공식 지원하고 잇고 아래와 같이 설치 한다.
 ```
 npm install vue-router
@@ -10,7 +10,7 @@ npm install vue-router
 ```
 example.com/#/user
 ```
-* 여기서 # 태그값을 제외하고 기본 URL 방식으로 요청을 할 때마다 index.html을 받아 라우팅을 하려면 
+* 여기서 # 태그값을 제외하고 기본 URL 방식으로 요청을 할 때마다 index.html을 받아 라우팅을 하려면
 ```
 const router = new VueRouter({
     routes,
@@ -22,7 +22,7 @@ const router = new VueRouter({
 Nested Routers
 ===============
 * 라우터로 화면 이동시 Nested Routers를 이요하여 여러개의 컴포넌트를 동시에 렌더링 할 수 있다.
-* 렌더링 되는 컴포넌트의 구조는 가장 큰 상위의 컴포넌트가 하위의 컴포넌트를 포함하는 **Parent - Child**형태와 같다.
+* 렌더링 되는 컴포넌트의 구조는 가장 큰 상위의 컴포넌트가 하위의 컴포넌트를 포함하는 **Parent - Child** 형태와 같다.
 ```
 <div id="app">
     <router-view></router-view>
@@ -59,7 +59,7 @@ var Foo = {
 Named Views
 ========
 * 라우터로 특정 URL로 이동시, 해당 URL에 해당하는 여러개의 View(컴포넌트)를 동시에 렌더링한다.
-* 각 컴포넌트에 해당하는  **name**속성과 **router-view**지정이 필요
+* 각 컴포넌트에 해당하는  **name** 속성과 **router-view** 지정이 필요
 ```
 <div id="app">
     <router-view name="nestedHeader"></router-view>

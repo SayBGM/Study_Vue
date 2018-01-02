@@ -86,7 +86,7 @@ module.exports={
 ```
 test: /backbone/,                               //backbone이라는 키워드를 만났을 때
 use: [
-    'expose-loader?Backbone',
+    'expose-loader?Backbone',                   //expose-loader와 imports-loader 공부하기(외국자료 밖에 없다..)
     'imports-loader?_=underscore,jquery'
 ]
 ```

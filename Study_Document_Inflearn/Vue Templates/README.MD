@@ -24,7 +24,7 @@ JS Expressions
 
 Directive
 ---
-**v-**접두사를 붙인 attributes로, javscript 표현식ㅇ로 값을 나타내는 게 일반적이다. **:**을 붙여 인자를 받아 취급할 수 있다.
+**v-** 접두사를 붙인 attributes로, javscript 표현식ㅇ로 값을 나타내는 게 일반적이다. **:** 을 붙여 인자를 받아 취급할 수 있다.
 * [v-if](https://kr.vuejs.org/v2/guide/#조건문과-반복문)
 * [v-bind](https://kr.vuejs.org/v2/guide/#선언적-렌더링)
 * [v-on:click](https://kr.vuejs.org/v2/guide/#사용자-입력-핸들링)
@@ -39,7 +39,7 @@ Directive
 ```
 [Filters](https://kr.vuejs.org/v2/guide/filters.html)
 ----------
-화면에 표시되는 텍스트의 형식을 편하게 바꿀 수 있도록 고안된 기능이며, **|**을 이요하여 여러 개의 필터를 적용할 수 있다.
+화면에 표시되는 텍스트의 형식을 편하게 바꿀 수 있도록 고안된 기능이며, **|** 을 이요하여 여러 개의 필터를 적용할 수 있다.
 ```
 <!-- message에 표시될 문자에 capitalize 필터를 적용하여 첫 글자를 대문자로 변경한다. -->
 {{ message | capitalize}}
