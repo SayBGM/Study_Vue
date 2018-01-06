@@ -86,7 +86,45 @@ module.exports={
 ```
 test: /backbone/,                               //backbone이라는 키워드를 만났을 때
 use: [
-    'expose-loader?Backbone',                   //expose-loader와 imports-loader 공부하기(외국자료 밖에 없다..)
+    'expose-loader?Backbone',                   
     'imports-loader?_=underscore,jquery'
 ]
+```
+*expose-loader와 imports-loader 공부하기(외국자료 밖에 없다..)*
+* 위 설정 파일을 webpack으로 번들링 한 결과물을 아래와 같다.
+```
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+var _ = webpack_require__(0);
+var jquery = __webpack_require(1);
+```
+
+Babel Loader
+====
+* preset: Babel 플러그인 리스트
+```
+module: {
+    rules: [{
+        test: /\.js$/,
+        use: [{
+            loader: 'babel-loader',
+            options: {
+                presets: [
+                    ['es2015', 'react', {modules: false}]
+                ]
+            }
+        }]
+    }]
+}
+```
+Tree Shaking
+-----
+쓰지 않는 모듈들에 대해서는 추가 하지 않는다.
+
+### presets
+presets 같은 경우에는 보통 다음과 같이 한다.
+```
+//.bablerc
+{
+    "presets": ["react", "es2015"]
+}
 ```
