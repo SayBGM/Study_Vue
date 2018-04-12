@@ -13,7 +13,7 @@
 
 - 상위에서 하위로 값을 전달하려면 props 속성을 사용한다.
 
-```vue
+```javascript
 Vue.component('child-component',{
     props: ['passedData'],
     template: '<p>{{passedData}}</p>'
@@ -61,7 +61,7 @@ Non Parent - Child 컴포넌트 간의 통신을 위해 Event Bus 를 활용할 
 
 - Event Bus를 위해 새로운 Vue를 생성하여 아래와 같이 Vue Root Instance 가 위치한 파일에 등록
 
-```vue
+```javascript
 //Vue Root Instance 전에 꼭 등록 순서가 중요
 export const eventBus = new Vue();
 new Vue({
@@ -73,7 +73,7 @@ new Vue({
 
 - 이벤트를 발생시킬 컴포넌트에 _eventBus_ import후 _$emit_으로 이벤트 발생
 
-```vue
+```javascript
 import { eventBus } from '../../main';
 
 eventBus.$emit('refresh' 10);
@@ -82,7 +82,7 @@ eventBus.$emit('refresh' 10);
 ## 이벤트 수신
 
 - 해당 이벤트를 받을 컴포넌트에도 동일하게 import 후 콜백으로 이벤트 수신 
-```vue 
+```javascript 
 import { eventBus } from '../../main';
 
 created() { eventBus.$on('refresh', function(data){ console.log(data); //10 }); }
