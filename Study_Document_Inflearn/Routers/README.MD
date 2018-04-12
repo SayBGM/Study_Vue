@@ -11,7 +11,7 @@ npm install vue-router
 example.com/#/user
 ```
 * 여기서 # 태그값을 제외하고 기본 URL 방식으로 요청을 할 때마다 index.html을 받아 라우팅을 하려면
-```
+```js
 const router = new VueRouter({
     routes,
     // 아래와 같이 history 모드를 추가해주면 된다.
@@ -23,7 +23,7 @@ Nested Routers
 ===============
 * 라우터로 화면 이동시 Nested Routers를 이요하여 여러개의 컴포넌트를 동시에 렌더링 할 수 있다.
 * 렌더링 되는 컴포넌트의 구조는 가장 큰 상위의 컴포넌트가 하위의 컴포넌트를 포함하는 **Parent - Child** 형태와 같다.
-```
+```vue
 <div id="app">
     <router-view></router-view>
 </div>
@@ -37,7 +37,7 @@ Nested Routers
 ----
 * Vue의 Template에는 최상위 태그가 1개만 있어야 렌더가 가능하다.
 * 아래는 Template의 HTML 태그를 정의 할 떄 주의 해야하는 Vue의 성질이다.
-```
+```js
 var Foo = {
     template: `
         <div>foo</div>
@@ -46,7 +46,7 @@ var Foo = {
 }
 ```
 ## ↓↓↓↓↓↓↓↓↓↓↓↓
-```
+```js
 var Foo = {
     template: `
     <div>
@@ -60,13 +60,13 @@ Named Views
 ========
 * 라우터로 특정 URL로 이동시, 해당 URL에 해당하는 여러개의 View(컴포넌트)를 동시에 렌더링한다.
 * 각 컴포넌트에 해당하는  **name** 속성과 **router-view** 지정이 필요
-```
+```vue
 <div id="app">
     <router-view name="nestedHeader"></router-view>
     <router-view></router-view>
 </div>
 ```
-```
+```js
 {
     path: '/home',
     components: {
@@ -85,13 +85,13 @@ Nested View vs Named Views
 
 추가로 배운 것
 ----
-```
+```js
 var app = new Vue({
 el: ‘#app’,
 router : router
 });
 ```
-```
+```js
 var app = new Vue({
 router
 }).$mount(‘#app’)
