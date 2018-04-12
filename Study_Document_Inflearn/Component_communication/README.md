@@ -76,7 +76,7 @@ new Vue({
 ```
 import { eventBus } from '../../main';
 
-eventBus.%emit('refresh' 10);
+eventBus.$emit('refresh' 10);
 ```
 
 ## 이벤트 수신
