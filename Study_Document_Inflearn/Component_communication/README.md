@@ -27,7 +27,7 @@ var app = new Vue({
 })
 ```
 
-```
+```vue
 <div id="app">
     <child-component v-bind:passed-data="message"></child-component>
 </div>
